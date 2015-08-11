@@ -1,0 +1,23 @@
+{
+    "name": "apes/silverback-client",
+    "type": "library",
+    "description": "Silverback API client for PHP",
+    "keywords": ["apes", "silverback"],
+    "homepage": "http://kanzi.appspot.com/api",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "APES Dev Team",
+            "email": "dev@technoapes.co"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "google/apiclient": "1.0.*@beta"
+    }
+}

@@ -1,0 +1,15 @@
+application: apes-silverback-php-client
+version: 20150811
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /styles/(.*\.css)
+  mime_type: text/css
+  static_files: examples/styles/\1
+  upload: examples/styles/(.*\.css)
+
+- url: .*
+  script: examples/main.php
