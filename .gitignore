@@ -1,4 +1,3 @@
-/data/config.ini
 /cache/
 /vendor/
 /nbproject/
@@ -14,3 +13,6 @@ composer.lock
 
 # Google App Engine generated folder
 appengine-generated/
+
+# Avoid secrets keys in the repository
+/examples/config.ini

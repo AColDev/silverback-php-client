@@ -24,7 +24,7 @@
  * <a href="http://kanzi.technoapes.co/api" target="_blank">Documentation</a>
  * </p>
  *
- * @author APES.
+ * @author Google, Inc.
  */
 class apes_Service_SilverbackCustomersAPI extends Google_Service
 {
@@ -698,11 +698,11 @@ class apes_Service_SilverbackCustomersAPI_Sku_Resource extends Google_Service_Re
   /**
    * Adds a new SKU (sku.insert)
    *
-   * @param apes_SKUIn $postBody
+   * @param apes_SKUInsertIn $postBody
    * @param array $optParams Optional parameters.
    * @return apes_Service_SilverbackCustomersAPI_SKU
    */
-  public function insert(apes_Service_SilverbackCustomersAPI_SKUIn $postBody, $optParams = array())
+  public function insert(apes_Service_SilverbackCustomersAPI_SKUInsertIn $postBody, $optParams = array())
   {
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -730,11 +730,11 @@ class apes_Service_SilverbackCustomersAPI_Sku_Resource extends Google_Service_Re
    * (sku.patch)
    *
    * @param string $sku
-   * @param apes_SKUIn $postBody
+   * @param apes_SKUUpdateIn $postBody
    * @param array $optParams Optional parameters.
    * @return apes_Service_SilverbackCustomersAPI_SKU
    */
-  public function patch($sku, apes_Service_SilverbackCustomersAPI_SKUIn $postBody, $optParams = array())
+  public function patch($sku, apes_Service_SilverbackCustomersAPI_SKUUpdateIn $postBody, $optParams = array())
   {
     $params = array('sku' => $sku, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -745,11 +745,11 @@ class apes_Service_SilverbackCustomersAPI_Sku_Resource extends Google_Service_Re
    * Updates the data for a given SKU (sku.update)
    *
    * @param string $sku
-   * @param apes_SKUIn $postBody
+   * @param apes_SKUUpdateIn $postBody
    * @param array $optParams Optional parameters.
    * @return apes_Service_SilverbackCustomersAPI_SKU
    */
-  public function update($sku, apes_Service_SilverbackCustomersAPI_SKUIn $postBody, $optParams = array())
+  public function update($sku, apes_Service_SilverbackCustomersAPI_SKUUpdateIn $postBody, $optParams = array())
   {
     $params = array('sku' => $sku, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -1717,6 +1717,7 @@ class apes_Service_SilverbackCustomersAPI_PurchaseOrderUpdateIn extends Google_C
   public $locationExternalId;
   protected $skusAmountType = 'Apes_Service_SilverbackCustomersAPI_BackendModelsSKUAmountIn';
   protected $skusAmountDataType = 'array';
+  public $supplier;
 
 
   public function setArrivalDate($arrivalDate)
@@ -1758,6 +1759,14 @@ class apes_Service_SilverbackCustomersAPI_PurchaseOrderUpdateIn extends Google_C
   public function getSkusAmount()
   {
     return $this->skusAmount;
+  }
+  public function setSupplier($supplier)
+  {
+    $this->supplier = $supplier;
+  }
+  public function getSupplier()
+  {
+    return $this->supplier;
   }
 }
 
@@ -1996,7 +2005,7 @@ class apes_Service_SilverbackCustomersAPI_SKUDispatch extends Google_Model
   }
 }
 
-class apes_Service_SilverbackCustomersAPI_SKUIn extends Google_Collection
+class apes_Service_SilverbackCustomersAPI_SKUInsertIn extends Google_Collection
 {
   protected $collection_key = 'attributes';
   protected $internal_gapi_mappings = array(
@@ -2007,6 +2016,7 @@ class apes_Service_SilverbackCustomersAPI_SKUIn extends Google_Collection
   public $ean;
   public $imageUrl;
   public $name;
+  public $sku;
 
 
   public function setAttributes($attributes)
@@ -2048,6 +2058,14 @@ class apes_Service_SilverbackCustomersAPI_SKUIn extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  public function setSku($sku)
+  {
+    $this->sku = $sku;
+  }
+  public function getSku()
+  {
+    return $this->sku;
   }
 }
 
@@ -2164,6 +2182,61 @@ class apes_Service_SilverbackCustomersAPI_SKUSaleReport extends Google_Model
   public function getState()
   {
     return $this->state;
+  }
+}
+
+class apes_Service_SilverbackCustomersAPI_SKUUpdateIn extends Google_Collection
+{
+  protected $collection_key = 'attributes';
+  protected $internal_gapi_mappings = array(
+  );
+  protected $attributesType = 'Apes_Service_SilverbackCustomersAPI_KeyValue';
+  protected $attributesDataType = 'array';
+  public $companyPrefix;
+  public $ean;
+  public $imageUrl;
+  public $name;
+
+
+  public function setAttributes($attributes)
+  {
+    $this->attributes = $attributes;
+  }
+  public function getAttributes()
+  {
+    return $this->attributes;
+  }
+  public function setCompanyPrefix($companyPrefix)
+  {
+    $this->companyPrefix = $companyPrefix;
+  }
+  public function getCompanyPrefix()
+  {
+    return $this->companyPrefix;
+  }
+  public function setEan($ean)
+  {
+    $this->ean = $ean;
+  }
+  public function getEan()
+  {
+    return $this->ean;
+  }
+  public function setImageUrl($imageUrl)
+  {
+    $this->imageUrl = $imageUrl;
+  }
+  public function getImageUrl()
+  {
+    return $this->imageUrl;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
   }
 }
 

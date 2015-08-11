@@ -1,0 +1,13 @@
+application_name = APES Silverback example client
+;Production environment
+;base_path = https://apes-silver-back.appspot.com/_ah/api
+;Staging environment
+;base_path = https://apes-silverback-staging.appspot.com/_ah/api
+;Development environment
+base_path = http://localhost:8080/_ah/api
+
+auth_class = apes_Auth_HeaderToken
+[classes]
+apes_Auth_HeaderToken[key] = <INSERT_KEY_HERE>
+
+Google_Http_Request[disable_gzip] = true

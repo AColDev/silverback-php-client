@@ -11,5 +11,10 @@ handlers:
   static_files: examples/styles/\1
   upload: examples/styles/(.*\.css)
 
+- url: /favicon.ico
+  mime_type: image/x-icon
+  static_files: examples/favicon.ico
+  upload: examples/favicon.ico
+
 - url: .*
   script: examples/main.php
