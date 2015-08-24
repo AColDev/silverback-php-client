@@ -44,11 +44,11 @@ $location = $service->location->update($locationId, $locationIn);
 echo "Location $location->name updated successfully!<br/><br/>";
 
 //Insert SKU
-$skuId = (string) time();
+$skuId = mt_rand(0, 999999);
 $skuIn = new apes_Service_SilverbackCustomersAPI_SKUInsertIn();
 $skuIn->setSku($skuId);
 $skuIn->setName('MySKU');
-$skuIn->setCompanyPrefix('0195175');
+$skuIn->setCompanyPrefix(195175);
 $skuIn->setImageUrl('http://test.co/i.png');
 $attributeColor = new apes_Service_SilverbackCustomersAPI_KeyValue();
 $attributeColor->setName('color');
@@ -70,6 +70,7 @@ echo "<br/>";
 $skuIn = new apes_Service_SilverbackCustomersAPI_SKUUpdateIn();
 $skuIn->setName('OtherSKU');
 $skuIn->setImageUrl('http://test.co/j.png');
+$skuIn->setCompanyPrefix(195175);
 $service->sku->update($skuId, $skuIn);
 echo "SKU $sku->name updated successfully!<br/><br/>";
 
