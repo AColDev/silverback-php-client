@@ -6,6 +6,8 @@ application_name = APES Silverback example client
 ;Development environment
 base_path = http://localhost:8080/_ah/api
 
+version = v1
+
 auth_class = apes_Auth_HeaderToken
 [classes]
 apes_Auth_HeaderToken[key] = <INSERT_KEY_HERE>

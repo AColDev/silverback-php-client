@@ -16,5 +16,8 @@ handlers:
   static_files: examples/favicon.ico
   upload: examples/favicon.ico
 
-- url: .*
+- url: /main
   script: examples/main.php
+
+- url: /curl
+  script: examples/curl.php

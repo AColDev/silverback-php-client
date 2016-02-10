@@ -16,7 +16,7 @@ $client->setAuth(new apes_Auth_HeaderToken($client));
 $service = new apes_Service_SilverbackCustomersAPI($client);
 
 include_once __DIR__ . "/templates/base.php";
-echo pageHeader("Silverback API demo");
+echo pageHeader("Silverback API demo using the Google API Client");
 
 //Insert a new location
 $locationId = 'location' . time();
@@ -94,6 +94,7 @@ echo "<h3>Purchase Order List</h3>";
 foreach($service->purchaseOrder->listPurchaseOrder()->getItems() as $purchaseOrder){
     echo "ID: $purchaseOrder->externalId arriving to $purchaseOrder->locationExternalId <br/>";
 }
+echo "<br/>";
 
 //Update purchase order
 $purchaseOrderIn = new apes_Service_SilverbackCustomersAPI_PurchaseOrderUpdateIn();
