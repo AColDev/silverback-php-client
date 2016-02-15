@@ -1,5 +1,3 @@
-application: apes-silverback-php-client
-version: 20150811
 runtime: php55
 api_version: 1
 threadsafe: true

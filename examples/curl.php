@@ -20,6 +20,8 @@ function execute($url, $header, $method = 'GET', $params = [])
         curl_setopt($curl, CURLOPT_POST, true);
     } elseif ($method == 'GET') {
         // Nothing to do here!
+    } elseif ($method == 'PUT') {
+        curl_setopt($curl, CURLOPT_PUT, true);
     } else {
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
     }
@@ -88,6 +90,7 @@ echo "SKU " . $sku['name'] . " inserted successfully!<br/><br/>";
 //List SKUs
 echo "<h3>SKU List</h3>";
 $skus = execute($baseUrl . 'sku', $header);
+
 foreach ($skus['items'] as $sku) {
     echo $sku['sku'] . " - " . $sku['name'] . "<br/>";
 }
