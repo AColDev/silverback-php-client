@@ -165,7 +165,8 @@ $dispatchIn = [
     'externalId' => $dispatchID,
     'sourceExternalId' => $locationId,
     'destinationExternalId' => $destinationId,
-    'skusAmount' => $skuAmount
+    'skusAmount' => $skuAmount,
+    'type' => 'AD'
 ];
 
 $dispatch = execute($baseUrl . 'dispatch', $header, 'POST', $dispatchIn);
@@ -185,6 +186,7 @@ echo "<br/>";
 $dispatchIn = [
     'sourceExternalId' => $destinationId,
     'destinationExternalId' =>$locationId,
+    'type' => 'AF'
 ];
 
 $dispatch = execute($baseUrl . 'dispatch/' . $dispatchID, $header, 'PUT', $dispatchIn);
